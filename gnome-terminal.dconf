@@ -1,0 +1,9 @@
+[/]
+background-color='rgb(0,43,54)'
+cursor-shape='block'
+font='Ubuntu Mono derivative Powerline 13'
+foreground-color='rgb(131,148,150)'
+text-blink-mode='always'
+use-system-font=false
+use-theme-colors=false
+visible-name='ZSH'
