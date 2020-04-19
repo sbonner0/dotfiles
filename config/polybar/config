@@ -1,0 +1,387 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+; Ideas used from: https://github.com/yssource/polybar-nord-theme
+
+[config]
+# bar position, apply globally
+width = 100%
+height = 2%
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+
+fixed-center = true
+override-redirect = false
+# module list:
+# alsa: Display current volume
+# backlight: Display screen brightness
+# date: Display date
+# notify: Notify icon, can customize its binding
+# network-short: Network connect icon, can customize its binding
+# battery: Battery info
+# keyboard: CapsLock indicator
+# mpd: mpd status and controls
+# i3: i3 workspace icons
+# workspace-name: i3 current workspace name, need to be in the format like "1:Home"
+# title: title of the active window
+# network-detail: Download and upload speed 
+# weather: Display openweather info
+# info-hackspeed: Numper of characters clicked per minute
+# daily-poem: Display poem
+# temperature: Display internal temperature
+# memory: Display memory usage
+# cpu: Display cpu usage
+# show-desktop: Display desktop (i3 only)
+
+# Top modules
+top-left = i3 title workspace-name
+top-center = date
+top-right =  alsa network-short cpu memory temperature
+systray-top = right
+
+# global style
+line-size = 6
+
+# Modules configure option
+# the default value in this section should work in most cases,
+# if some of them doesn't suit your environment, you can change
+# it from here.
+# network interface, check by `ip link show`
+interface = eno1
+
+# soundcard setting
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+
+thermal-zone = 0
+# Base temperature for where to start the ramp (in degrees celsius)
+base-temperature = 20
+# Threshold temperature to display warning label (in degrees celsius)
+warn-temperature = 70
+
+
+# notify module setting
+notify-click-left = xdotool key control+grave
+
+# network module setting
+network-click-left = i3-msg workspace 2
+
+# i3
+# Only show workspaces defined on the same output as the bar
+#
+# Useful if you want to show monitor specific workspaces
+# on different bars
+#
+# Default: false
+i3-pin-workspaces = false
+
+; Colours using the Nord colour theme: https://www.nordtheme.com/docs/colors-and-palettes
+[colors]
+background = #2E3440
+buffer = #3B4252
+foreground = #D8DEE9
+nord6 = #ECEFF4
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+urgent = #BF616A
+warning = #D08770
+notify = #EBCB8B
+success = #A3BE8C
+function = #B48EAD
+
+[bar/toppower]
+width = ${config.width}
+height = ${config.height}
+offset-x = ${config.offset-x}
+offset-y = ${config.offset-y}
+radius = ${config.radius}
+
+fixed-center = ${config.fixed-center}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = ${config.line-size}
+
+padding-left = 0
+padding-right = 0
+
+override-redirect = ${config.override-redirect}
+
+module-margin = 1
+
+#font-0 = FiraCodeRegular:pixelsize=12
+font-0 = System San Francisco Display:pixelsize=12
+font-1 = FontAwesome5FreeSolid:pixelsize=12;1
+font-2 = FontAwesome5FreeRegular:pixelsize=12;1
+font-3 = FontAwesome5Brands:pixelsize=8;1
+font-4 = WenQuanYiMicroHei:size=12
+
+modules-left = ${config.top-left}
+modules-center = ${config.top-center}
+modules-right = ${config.top-right}
+
+tray-position = ${config.systray-top}
+tray-padding = 3
+tray-detached = false
+tray-maxsize = 22
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = ${config.i3-pin-workspaces}
+
+strip-wsnumbers = true
+
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+reverse-scroll = true
+
+fuzzy-match = false
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; icons
+ws-icon-0 = 1:Home;
+ws-icon-1 = 2:Browser;
+ws-icon-2 = 3:Coding;
+ws-icon-3 = 4:Learning;
+ws-icon-4 = 5:Fun;
+ws-icon-5 = 25:Desktop;
+ws-icon-default = 
+
+; color
+label-focused = 
+label-focused-underline = ${colors.nord7}
+label-focused-foreground = ${colors.nord7}
+label-focused-padding = 2
+
+label-unfocused = •
+label-unfocused-foreground = ${colors.nord9}
+label-unfocused-padding = 2
+
+label-urgent = 
+label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 2
+
+; seperator
+label-separator = |
+label-separator-foreground = ${colors.buffer}
+
+[module/workspace-name]
+type = internal/i3
+strip-wsnumbers = true
+
+format = <label-state>
+
+label-focused = %name%
+label-focused-padding = 2
+label-focused-foreground = ${colors.nord7}
+label-focused-underline = ${colors.nord7}
+
+label-unfocused = 
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 2
+
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.nord7}
+format-underline = ${colors.nord7}
+format-padding = 4
+
+label-maxlen = 20
+label-empty = Desktop
+
+[module/date]
+type = internal/date
+interval = 1.0
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %H:%M
+
+date-alt = %Y-%m-%d%
+
+format = <label>
+label =  %date%
+label-margin = 1
+label-underline = ${colors.nord8}
+
+[module/keyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+bufferlist-0 = num lock
+bufferlist-1 = scroll lock
+
+; Format
+format = <label-indicator>
+
+label-indicator-on-capslock =  CL
+label-indicator-on-capslock-foreground = ${colors.warning}
+label-indicator-on-capslock-underline = ${colors.warning}
+
+; Icons
+layout-icon-default = 
+
+[module/alsa]
+type = internal/alsa
+
+master-soundcard = ${config.master-soundcard}
+speaker-soundcard = ${config.speaker-soundcard}
+headphone-soundcard = ${config.headphone-soundcard}
+
+master-mixer = ${config.master-mixer}
+
+; Format 
+format-volume = <ramp-volume> <label-volume>
+format-volume-underline = ${colors.function}
+
+label-muted =  muted
+label-muted-foreground = ${colors.urgent}
+label-muted-underline = ${colors.urgent}
+
+ramp-volume-0 = 
+ramp-volume-0-foreground = ${colors.success}
+ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.notify}
+ramp-volume-2 = 
+ramp-volume-2-foreground = ${colors.urgent}
+
+ramp-headphones-0 = 
+
+ramp-volume-foreground = ${colors.nord7}
+
+
+[module/notify]
+type = custom/text
+content = 
+content-foreground = ${colors.warning}
+content-underline = ${colors.warning}
+content-padding = 1
+
+click-left = ${config.notify-click-left}
+
+[module/network-short]
+type = internal/network
+interface = ${config.interface}
+
+interval = 1
+
+format-connected = %{A1:networkmanager_dmenu:}<ramp-signal>%{A}
+format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
+
+label-disconnected = 
+label-disconnected-foreground = ${colors.urgent}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+
+ramp-signal-0-foreground = ${colors.urgent}
+ramp-signal-0-underline = ${colors.urgent}
+
+ramp-signal-1-foreground = ${colors.notify}
+ramp-signal-1-underline = ${colors.notify}
+
+ramp-signal-2-foreground = ${colors.nord7}
+ramp-signal-2-underline = ${colors.nord7}
+
+ramp-signal-3-foreground = ${colors.success}
+ramp-signal-3-underline = ${colors.success}
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format = <ramp-load> <label>
+
+ramp-load-0 = 
+ramp-load-0-foreground = ${colors.success}
+
+ramp-load-1 = 
+ramp-load-1-foreground = ${colors.warning}
+
+ramp-load-2 = 
+ramp-load-2-foreground = ${colors.urgent}
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+format = <ramp-used> <label>
+
+label = %gb_used%/%gb_total%
+
+ramp-used-0 = 
+ramp-used-0-foreground = ${colors.success}
+
+ramp-used-1 = 
+ramp-used-1-foreground = ${colors.warning}
+
+ramp-used-2 = 
+ramp-used-2-foreground = ${colors.urgent}
+
+[module/temperature]
+type = internal/temperature
+
+thermal-zone = ${config.thermal-zone}
+
+base-temperature = ${config.base-temperature}
+
+warn-temperature = ${config.warn-temperature}
+
+; Format
+format = <ramp> <label>
+format-warn = <label-warn>
+format-warn-background = ${colors.foreground}
+
+label-warn =  %temperature-c%
+label-warn-padding = 1
+label-warn-foreground = ${colors.urgent}
+label-warn-background = ${colors.foreground}
+label-underline = ${colors.nord8}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+ramp-0-foreground = ${colors.nord8}
+ramp-1-foreground = ${colors.nord8}
+ramp-2-foreground = ${colors.success}
+ramp-3-foreground = ${colors.success}
+ramp-4-foreground = ${colors.warning}
