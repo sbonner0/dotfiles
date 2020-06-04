@@ -1,5 +1,9 @@
 # dotfiles for my Arch Linux setup
 
+## WM
+
+- i3-gaps
+
 ## Apps
 
 Current system relies on the following apps:
