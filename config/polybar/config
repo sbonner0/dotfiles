@@ -108,7 +108,8 @@ font-0 = System San Francisco Display:pixelsize=12.5;2
 font-1 = FontAwesome5FreeSolid:pixelsize=13;2
 font-2 = FontAwesome5FreeRegular:pixelsize=13;2
 font-3 = FontAwesome5Brands:pixelsize=13;2
-font-4 = NotoEmoji Nerd Font:size=20;6
+font-4 = UbuntuMono Nerd Font:size=25;6
+;font-4 = NotoEmoji Nerd Font:size=20;6
 
 modules-left = ${config.top-left}
 modules-center = ${config.top-center}
@@ -208,7 +209,7 @@ label-focused-foreground = ${colors.nord7}
 label-focused-padding = 2
 
 label-unfocused = •
-label-unfocused-foreground = ${colors.nord9}
+label-unfocused-foreground = ${colors.nord8}
 label-unfocused-padding = 2
 
 label-urgent = 
@@ -287,22 +288,22 @@ master-mixer = ${config.master-mixer}
 ; Format 
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${colors.nord0}
-format-volume-padding = 2.5
+format-volume-padding = ${paddings.inner}
 
 label-muted =  muted
-label-muted-padding = 2.5
+label-muted-padding = ${paddings.inner}
 label-muted-foreground = ${colors.urgent}
 label-muted-background = ${colors.nord0}
 
 ramp-volume-0 = 
 ramp-volume-0-foreground = ${colors.success}
-ramp-volume-0-padding = 2.5
+ramp-volume-0-padding = 1
 ramp-volume-1 = 
 ramp-volume-1-foreground = ${colors.notify}
-ramp-volume-1-padding = 2.5
+ramp-volume-1-padding = 1
 ramp-volume-2 = 
 ramp-volume-2-foreground = ${colors.urgent}
-ramp-volume-2-padding = 2.5
+ramp-volume-2-padding = 1
 
 ramp-headphones-0 = 
 
@@ -345,7 +346,7 @@ format-connected = %{A1:nm-connection-editor:}<ramp-signal>%{A}
 format-disconnected = %{A1:nm-connection-editor:}<label-disconnected>%{A}
 
 format-connected-background = ${colors.nord7}
-format-connected-padding = 2.5
+format-connected-padding = ${paddings.inner}
 
 label-disconnected = 
 
@@ -374,7 +375,7 @@ type = internal/cpu
 interval = 1
 
 format = <ramp-load> <label>
-format-padding = 2.5
+format-padding = ${paddings.inner}
 format-background = ${colors.nord2}
 
 ramp-load-0 = 
@@ -396,10 +397,11 @@ interval = 3
 
 format = <ramp-used> <label>
 format-background = ${colors.nord9}
-format-padding = 2.5
+format-padding = ${paddings.inner}
 
 label = %gb_used%/%gb_total%
 label-foreground = ${colors.nord0}
+label-padding = 1
 
 ramp-used-0 = 
 ramp-used-0-foreground = ${colors.nord0}
@@ -424,11 +426,11 @@ warn-temperature = ${config.warn-temperature}
 ; Format
 format = <ramp> <label>
 format-background = ${colors.nord2}
-format-padding = 2.5
+format-padding = ${paddings.inner}
 format-warn = <label-warn>
 
 label-warn =  %temperature-c%
-label-warn-padding = 1
+label-warn-padding = ${paddings.inner}
 label-warn-foreground = ${colors.urgent}
 label-warn-background = ${colors.foreground}
 
@@ -468,7 +470,7 @@ spacing = 2
 
 format-mounted = <label-mounted>
 format-mounted-background = ${colors.nord1}
-format-mounted-padding = 2.5
+format-mounted-padding = ${paddings.inner}
 
-label-mounted =  %percentage_used%% of %total%
-label-mounted-padding = 2.5
+label-mounted =   %percentage_used%% of %total%
+label-mounted-padding = ${paddings.inner}
