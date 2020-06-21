@@ -198,16 +198,17 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -config /home/stephenbonner
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Gnome stuff
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id gnome-flashback
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id gnome-power-manager
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec_always --no-startup-id gnome-power-manager
 
 # Compton (now called picom) Compositor
 exec --no-startup-id picom
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
