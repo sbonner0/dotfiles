@@ -189,12 +189,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Setup floating window support for named windows
+for_window [instance="matplotlib"] floating enable
+
 #############################
 # Applications
 #############################
 
 # start custom rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show combi -config /home/stephenbonner/.config/rofi/config.rasi
+bindsym $mod+d exec --no-startup-id rofi -show combi calc -config /home/stephenbonner/.config/rofi/config.rasi
+# start a calculator specific rofi 
+bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -203,12 +208,9 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -config /home/stephenbonner
 # Gnome stuff
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id gnome-flashback
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec_always --no-startup-id gnome-power-manager
 
 # Compton (now called picom) Compositor
 exec --no-startup-id picom
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-

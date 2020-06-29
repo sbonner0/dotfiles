@@ -13,6 +13,7 @@ Current system relies on the following apps:
 - rxvt-unicode
 - picom
 - rofi
+- rofi-calc
 - ranger
 
 ## Fonts
