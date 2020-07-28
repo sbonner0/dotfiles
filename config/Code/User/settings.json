@@ -1,6 +1,6 @@
 {
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Nord",
     "workbench.iconTheme": "material-icon-theme",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
@@ -60,5 +60,5 @@
     "window.zoomLevel": 0,
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.fontSize": 15,
-    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace"
-  }%
+    "editor.fontFamily": "'SF Mono', 'Font Awesome 5 Free Solid', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Brands'"
+  }
