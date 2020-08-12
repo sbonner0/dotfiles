@@ -1,0 +1,11 @@
+########################### General ###########################
+HashKnownHosts yes
+VisualHostKey yes
+Host *
+    ServerAliveCountMax 3
+    ServerAliveInterval 10
+    Ciphers aes128-ctr
+    Compression yes
+    ControlMaster auto
+    ControlPath  ~/.ssh/sockets/%r@%h-%p
+    ControlPersist  1h
