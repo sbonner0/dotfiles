@@ -26,3 +26,6 @@ The setup relies on the following fonts being install on Arch:
 - `otf-san-francisco`
 - `otf-sfmono`
 - `otf-san-francisco-pro`
+
+## Boot Conf
+These are added to the systemd bootline for X99 based system: mitigations=off pci=nommconf
