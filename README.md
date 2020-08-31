@@ -16,6 +16,14 @@ Current system relies on the following apps:
 - rofi-calc
 - ranger
 
+## Additonal Apps
+
+I currently still make use of gnome primarily for the google drive integration. The following packages aid in the use of gnome and i3:
+
+- gnome
+- i3-gnome
+- gnome-flashback
+
 ## Fonts
 
 I replace freetype2 with one with the cleartype patch, install `freetype2-cleartype` from the AUR.
