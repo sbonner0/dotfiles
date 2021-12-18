@@ -1,8 +1,8 @@
 configuration {
  modi: "window,drun,ssh,combi";
- theme: "nord";
  font: "San Francisco Display 11";
  combi-modi: "window,drun,ssh";
  show-icons: true;
  matching: "fuzzy";
  }
+@theme "nord"
