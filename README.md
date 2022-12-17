@@ -9,7 +9,7 @@
 Current system relies on the following apps:
 
 - polybar
-- termite
+- alacritty
 - rxvt-unicode
 - picom
 - rofi
