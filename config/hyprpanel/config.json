@@ -396,19 +396,24 @@
       "left": [
         "dashboard",
         "workspaces",
+        "separator",
         "windowtitle"
       ],
       "middle": [
         "media"
       ],
       "right": [
+        "updates",
+        "separator",
         "storage",
-        "cpu",
         "ram",
-        "volume",
+        "cpu",
+        "cputemp",
+        "separator",
         "network",
         "systray",
         "clock",
+        "volume",
         "notifications"
       ]
     },
@@ -449,5 +454,8 @@
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Firefox",
   "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
-  "theme.osd.opacity": 100
+  "theme.osd.opacity": 100,
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "bar.customModules.cpuTemp.pollingInterval": 1100,
+  "bar.customModules.cpuTemp.sensor": "/sys/devices/pci0000:00/0000:00:14.0/i2c-1/1-0051/hwmon/hwmon4/temp1_input"
 }
