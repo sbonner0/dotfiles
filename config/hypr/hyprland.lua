@@ -26,7 +26,7 @@ local menu        = "wofi --show drun"
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
-    hl.exec_cmd("hyprpanel")
+    hl.exec_cmd("wayle panel start")
     hl.exec_cmd("hypridle")
 end)
 
@@ -155,7 +155,9 @@ hl.config({
 -- Cursor
 hl.config({
     cursor = {
-        no_hardware_cursors = 2,
+        -- Force software cursors: auto (2) only disables them when tearing,
+        -- and hardware cursors are a known freeze trigger on Nvidia
+        no_hardware_cursors = 1,
     },
 })
 

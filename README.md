@@ -20,6 +20,12 @@ ln -sf ~/Git/dotfiles/config/rofi       ~/.config/rofi
 ln -sf ~/Git/dotfiles/config/picom      ~/.config/picom
 ```
 
+VSCode launch flags are a single file (the `/usr/bin/code` wrapper reads it from `~/.config/code-flags.conf` directly, not from a subdirectory):
+
+```bash
+ln -sf ~/Git/dotfiles/config/vscode/code-flags.conf ~/.config/code-flags.conf
+```
+
 ## WM
 
 - Hyprland
