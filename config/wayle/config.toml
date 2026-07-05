@@ -1,0 +1,54 @@
+[bar]
+module-gap = 1.0
+button-variant = "basic"
+button-rounding = "md"
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+    "window-title",
+]
+center = ["clock"]
+right = [
+    "cpu",
+    "ram",
+    "storage",
+    "network",
+    "separator",
+    "systray",
+    "updates",
+    "idle-inhibit",
+    "volume",
+    "notifications",
+]
+
+[styling]
+rounding = "md"
+
+[styling.palette]
+bg = "#232831"
+surface = "#2e3440"
+elevated = "#39404f"
+fg = "#cdcecf"
+fg-muted = "#7e8188"
+primary = "#88c0d0"
+red = "#bf616a"
+yellow = "#ebcb8b"
+green = "#a3be8c"
+blue = "#81a1c1"
+
+[modules.cpu]
+format = "{{ percent }}%  {{freq_ghz}} GHz  {{temp_c}}C"
+
+[modules.dashboard]
+icon-color = "status-success"
+
+[modules.hyprland-workspaces]
+display-mode = "none"
+app-icons-show = true
+
+[wallpaper]
+engine-enabled = false

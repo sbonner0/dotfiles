@@ -13,7 +13,7 @@ Then symlink each config directory into `~/.config/`:
 
 ```bash
 ln -sf ~/Git/dotfiles/config/hypr       ~/.config/hypr
-ln -sf ~/Git/dotfiles/config/hyprpanel  ~/.config/hyprpanel
+ln -sf ~/Git/dotfiles/config/wayle      ~/.config/wayle
 ln -sf ~/Git/dotfiles/config/alacritty  ~/.config/alacritty
 ln -sf ~/Git/dotfiles/config/wofi       ~/.config/wofi
 ln -sf ~/Git/dotfiles/config/rofi       ~/.config/rofi
@@ -36,7 +36,7 @@ Current system relies on the following apps:
 
 - alacritty
 - wofi
-- hyprpanel
+- wayle
 - hypridle
 - hyprlock
 
