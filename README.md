@@ -18,6 +18,7 @@ ln -sf ~/Git/dotfiles/config/alacritty  ~/.config/alacritty
 ln -sf ~/Git/dotfiles/config/wofi       ~/.config/wofi
 ln -sf ~/Git/dotfiles/config/rofi       ~/.config/rofi
 ln -sf ~/Git/dotfiles/config/picom      ~/.config/picom
+ln -sf ~/Git/dotfiles/config/nvim/      ~/.config/nvim
 ```
 
 VSCode launch flags are a single file (the `/usr/bin/code` wrapper reads it from `~/.config/code-flags.conf` directly, not from a subdirectory):
@@ -39,6 +40,7 @@ Current system relies on the following apps:
 - wayle
 - hypridle
 - hyprlock
+- neovim
 
 ## Fonts
 
