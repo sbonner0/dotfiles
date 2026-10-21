@@ -123,7 +123,12 @@ require("lazy").setup({
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = { options = { theme = "nord" } },
+        opts = {
+            options = { theme = "nord" },
+            sections = {
+                lualine_c = { { "filename", path = 3 } },
+            },
+        },
     },
 
     -- Fuzzy finder
